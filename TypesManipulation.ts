@@ -2,6 +2,8 @@
 
 // Key of
 
+/*
+
 interface IUser {
     name: string;
     age: number;
@@ -21,3 +23,34 @@ const user: IUser = {
 };
 
 const userName = getValue(user, 'name');
+console.log(userName);
+
+*/
+
+// Type of
+
+let strOrNum: string | number = 5;
+
+if(Math.random() > 0.5) {
+    strOrNum = 5;
+} else {
+    strOrNum = 'str';
+}
+
+
+let str2OrNum: typeof strOrNum;
+
+const user = {
+    name: 'Dima'
+}
+
+type keyOfUser = keyof typeof user;
+
+enum Direction {
+    Up,
+    Down,
+    Left,
+    Right
+}
+
+type D = keyof typeof Direction;
