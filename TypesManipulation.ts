@@ -108,8 +108,14 @@ type dateType = User['permission']['endDate']
 interface HTTPResponse<T extends 'success' | 'failed'> {
     code: number;
     data: T extends 'success' ? string : Error;
-    data2: T extends 'success' ? string : number;
 }
 
+const suc: HTTPResponse<'success'> = {
+    code: 200,
+    data: 'done'
+}
 
-
+const err: HTTPResponse<'failed'> = {
+    code: 404,
+    data: new Error
+}
