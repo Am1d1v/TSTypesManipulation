@@ -6,3 +6,5 @@ const user = {
 };
 const nameUser = user['name'];
 console.log(nameUser);
+const roleName = 'roles';
+const roles = ['admin', 'user', 'VIPuser'];

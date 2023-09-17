@@ -76,3 +76,22 @@ const user: User = {
 
 const nameUser = user['name'];
 console.log(nameUser);
+
+const roleName = 'roles';
+
+type rolesType = User['roles'];
+type rolesType2 = User[typeof roleName];
+
+
+type roleType = User['roles'][number]
+
+
+const roles = ['admin', 'user', 'VIPuser'] as const;
+type roleTypes = typeof roles[number];
+
+
+
+
+
+
+
