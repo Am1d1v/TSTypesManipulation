@@ -59,6 +59,7 @@ type D = keyof typeof Direction;
 
 // Indexed Access Types
 
+/*
 interface Role {
     name: string;
 
@@ -98,8 +99,17 @@ const roles = ['admin', 'user', 'VIPuser'] as const;
 type roleTypes = typeof roles[number];
 
 type dateType = User['permission']['endDate']
+*/
 
+// Conditional Type
 
+//const a: number = Math.random() > 0.5 ? 1 : 0;
+
+interface HTTPResponse<T extends 'success' | 'failed'> {
+    code: number;
+    data: T extends 'success' ? string : Error;
+    data2: T extends 'success' ? string : number;
+}
 
 
 
