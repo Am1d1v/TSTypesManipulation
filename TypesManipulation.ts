@@ -29,6 +29,7 @@ console.log(userName);
 
 // Type of
 
+/*
 let strOrNum: string | number = 5;
 
 if(Math.random() > 0.5) {
@@ -54,3 +55,24 @@ enum Direction {
 }
 
 type D = keyof typeof Direction;
+*/
+
+// Indexed Access Types
+
+interface Role {
+    name: string;
+
+}
+
+interface User {
+    name: string;
+    roles: Role[];
+}
+
+const user: User = {
+    name: 'Dima',
+    roles: []
+}
+
+const nameUser = user['name'];
+console.log(nameUser);
