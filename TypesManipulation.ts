@@ -104,7 +104,8 @@ type dateType = User['permission']['endDate']
 // Conditional Type
 
 //const a: number = Math.random() > 0.5 ? 1 : 0;
-
+ /*
+ 
 interface HTTPResponse<T extends 'success' | 'failed'> {
     code: number;
     data: T extends 'success' ? string : Error;
@@ -119,3 +120,31 @@ const err: HTTPResponse<'failed'> = {
     code: 404,
     data: new Error
 }
+*/
+
+
+// Infer
+
+function runTransaction(transaction: {
+    fromTo: [string, string]
+}){
+    console.log(transaction);
+}
+
+//Hard Code
+/*
+const transaction1 = {
+    fromTo: ['1', '2'] as [string, string]
+}
+*/
+
+const transaction1: GetFirstArg<typeof runTransaction> = {
+    fromTo: ['1', '2'] 
+}
+
+runTransaction(transaction1);
+
+type GetFirstArg<T> = T extends (first: infer First, ...args: any[]) => any ? First : never;
+
+
+
