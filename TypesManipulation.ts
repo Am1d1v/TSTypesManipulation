@@ -64,14 +64,22 @@ interface Role {
 
 }
 
+interface Permission{
+    endDate: Date;
+}
+
 interface User {
     name: string;
     roles: Role[];
+    permission: Permission;
 }
 
 const user: User = {
     name: 'Dima',
-    roles: []
+    roles: [],
+    permission: {
+        endDate: new Date()
+    }
 }
 
 const nameUser = user['name'];
@@ -89,7 +97,7 @@ type roleType = User['roles'][number]
 const roles = ['admin', 'user', 'VIPuser'] as const;
 type roleTypes = typeof roles[number];
 
-
+type dateType = User['permission']['endDate']
 
 
 

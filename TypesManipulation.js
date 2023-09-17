@@ -2,7 +2,10 @@
 // Key of
 const user = {
     name: 'Dima',
-    roles: []
+    roles: [],
+    permission: {
+        endDate: new Date()
+    }
 };
 const nameUser = user['name'];
 console.log(nameUser);
